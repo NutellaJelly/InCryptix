@@ -37,70 +37,14 @@ def CeaserEncode(message, key, encoded):
 
     return encoded
 
-def addExtractionKey(encoded, key, extraction, extractionkey):
-    i = key//10
-    j = key%10
-
-    extractionkey = random.randint(0,9)
-    i += extractionkey
-    j += extractionkey
-
-    i = str(i).zfill(2)
-    j = str(j).zfill(2)
-    
-    extraction = i+'0'+encoded
-    extraction = extraction+'0'
-    extraction = extraction+j
-    extraction = extraction+'0'
-    extraction = extraction+str(extractionkey)
-    #print(extraction)
-
-    return(extraction)
-
 def main():
     message = ''
     key = 0
     encoded = ''
-    extraction = ''
-    extractionkey = 0
     message = GetMessage(message)
     key = SetKey(key)
     encoded = CeaserEncode(message, key, encoded)
-    extraction = addExtractionKey(encoded, key, extraction, extractionkey)
-    print("Extracted message is: ",extraction)
     print("Encoded message is ",encoded)
+    print("Your key is ",key,". Remember it! You will need it do decode any message." )
 
 main()
-
-# def DeCode():
-#     message = '11.QZFGT.14.9'
-#     temp = ''
-#     l = len(message)
-#     counter = 0
-#     extractionkey = message[-1]
-#     i,j = '',''
-#     encoded = ''
-#     j = message[]
-#     for a in message:
-#         temp += a
-#         if(a == '.' and counter <= 2):
-#             i = temp
-#         counter += 1
-
-#         if(a == '.' and counter <= l-)
-
-#     j = message[l-4:l-2]
-#     encoded = message[l-len(i)+1:]
-#     print("i = ",i)
-#     print("j = ",j)
-#     print("extractionkey = ",extractionkey)
-#     print("encoded = ",encoded)          
-        
-    
-    # l = len(message)
-    # extractionkey = message[-1]
-    # i = message[0:2]
-    # message = message[]
-    # print(message)    
-
-# DeCode()
