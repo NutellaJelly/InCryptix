@@ -1,0 +1,17 @@
+def DeCode(encoded, key, message):
+    for i in range(len(encoded)):
+        checker = encoded[i]
+        message += chr((((ord(checker)) - int(key) - 65) % 26) + 65)
+
+    return message
+
+
+def main():
+    encoded = ''
+    key = 0
+    encoded = input("Enter the Encoded String: ")
+    key = input("Enter the Key that the message was generated using: ")
+    message = ''
+
+
+main()
